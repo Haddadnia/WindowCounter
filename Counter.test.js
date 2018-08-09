@@ -78,15 +78,17 @@ describe('Test the Counter', () => {
 		counter.increment();
 		expect(counter.numberInLastMinute()).toEqual(5);
 	});
-		// it('Can exclude events from numberInLastMinute', () => {
-	// 	counter.increment();
-	// 	counter.increment();
+/*
+	it('Can exclude events from numberInLastMinute', () => {
+		counter.increment();
+		counter.increment();
 
- //   		delay(61);
- //    	counter.increment();
- //    	counter.increment();
- //    	expect(counter.numberInLastMinute()).toEqual(2);
-	// });
+   		delay(61);
+    	counter.increment();
+    	counter.increment();
+    	expect(counter.numberInLastMinute()).toEqual(2);
+	});
+*/
 	it('Can deal with 0 events numberInLastMinute', () => {
     	expect(counter.numberInLastMinute()).toEqual(0);
 	});
@@ -103,6 +105,30 @@ describe('Test the Counter', () => {
     	expect(counter.numberInLastSecond()).toEqual(2);
     	expect(counter.numberInLastMinute()).toEqual(4);
 	});
+/*
+	// Hours & Minutes & Seconds
+	it('Can juggle hours minutes and seconds', () => {
+		counter.increment();
+		counter.increment();
 
+		delay(1*60*60+1); //1 hour and 1 second
+
+		counter.increment();
+
+		delay(2*60); // 2 minutes
+
+		counter.increment();
+
+		delay(2); //2 seconds
+
+		counter.increment();
+		counter.increment();
+
+		expect(counter.numberInLastSecond()).toEqual(2);
+    	expect(counter.numberInLastMinute()).toEqual(3);
+    	expect(counter.numberInLastHour()).toEqual(4);
+
+	});
+*/
 
 });

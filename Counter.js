@@ -5,7 +5,7 @@ const ONE_HOUR   = 1000 * 60 * 60;
 class Counter {
 
 	constructor() {
-		this.events = []; //Array versus linked list for better performance
+		this.events = [];
 
 		this.secondCount = 0;
 		this.minuteCount = 0;
@@ -52,20 +52,25 @@ class Counter {
  			index = 0;
  			count = events.length;
  		}
-
- 		count++;
- 		index--;
- 		let currentEvent;
- 		do {
  			if (index + 1 > events.length - 1) {
  				// You've reached the end of the array, without any hits
  				return 0
  			}
+
+ 		let currentEvent = events[index];
+ 		while (currentEvent < targetTime) {
+ 			if (index + 1 > events.length - 1) {
+ 				// You've reached the end of the array, without any hits
+ 				return 0
+ 			}
+ 			// You just hit an event which was outside of your time interval. 
+ 			// Increment the index to keep searching,
+ 			// and decrease the count, because that's one less event that meets your criteria.
  			count--;
  			index++;
 
 			currentEvent = events[index];
- 		} while (currentEvent < targetTime);
+ 		}
 
  		return count;
  	}
