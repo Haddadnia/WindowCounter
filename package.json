@@ -1,0 +1,19 @@
+{
+  "name": "River",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Counter.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.4.2"
+  }
+}
